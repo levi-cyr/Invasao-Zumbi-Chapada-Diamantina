@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.MovePosition(rb.position + movementDirection * speed * Time.fixedDeltaTime);
         }
+
+        FindAnyObjectByType<PlayerAnimation>().SetDirection(movementDirection);
     }
 
     void HandleMovement()
