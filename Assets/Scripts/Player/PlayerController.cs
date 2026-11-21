@@ -1,65 +1,55 @@
 using UnityEngine;
-using UnityEngine.UI;             // For UI elements
-using UnityEngine.SceneManagement; // For reloading the scene
-using System.Collections;
-using TMPro;
-using System.Collections.Generic;
 
 
-    public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 1.0f; // the movement speed of the player
+    private Rigidbody2D rb;
+    private Vector2 movementDirection;
+
+    void Start()
     {
-       
-        public float speed = 1.0f; // the movement speed of the player
-        private Rigidbody2D rb;
-        private Vector2 movementDirection;
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-
-
-        void Start()
+    void Update()
+    {
+        HandleMovement();
+    }
+    
+    void FixedUpdate()
+    {
+        if (movementDirection != Vector2.zero)
         {
-            rb = GetComponent<Rigidbody2D>();
-            
+            rb.MovePosition(rb.position + movementDirection * speed * Time.fixedDeltaTime);
+        }
+    }
+
+    void HandleMovement()
+    {
+        float horizontal = 0f;
+        float vertical = 0f;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            vertical = 1f;
         }
 
-        void Update()
-{
-    HandleMovement();
-}
+        if (Input.GetKey(KeyCode.S))
+        {
+            vertical = -1f;
+        }
 
-void FixedUpdate()
-{
-    if (movementDirection != Vector2.zero)
-    {
-        rb.MovePosition(rb.position + movementDirection * speed * Time.fixedDeltaTime);
+        if (Input.GetKey(KeyCode.D))
+        {
+            horizontal = 1f;
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            horizontal = -1f;
+        }
+
+        movementDirection = new Vector2(horizontal, vertical).normalized;
     }
 }
-
-void HandleMovement()
-{
-    float horizontal = 0f;
-    float vertical = 0f;
-
-    if (Input.GetKey(KeyCode.UpArrow))
-    {
-        vertical = 1f;
-    }
-
-    if (Input.GetKey(KeyCode.DownArrow))
-    {
-        vertical = -1f;
-    }
-
-    if (Input.GetKey(KeyCode.RightArrow))
-    {
-        horizontal = 1f;
-    }
-
-    if (Input.GetKey(KeyCode.LeftArrow))
-    {
-        horizontal = -1f;
-    }
-
-    movementDirection = new Vector2(horizontal, vertical).normalized;
-}
-
-    }
