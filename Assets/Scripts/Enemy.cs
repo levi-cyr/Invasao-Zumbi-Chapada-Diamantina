@@ -48,4 +48,13 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject); //mata o zombie
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Health playerHealth = collision.gameObject.GetComponent<Health>();
+            playerHealth?.TakeDamage(1);
+        }
+    }
 }
