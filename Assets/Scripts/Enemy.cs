@@ -1,17 +1,21 @@
+using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Settings")]
-    [SerializeField] float health = 3f;
-    //[SerializeField] float maxHealth = 3f;
+    public static event Action OnEnemyKilled;
 
+    [Header("Enemy Settings")]
+    public float health = 3f;
     public float speed = 0.4f; // velocidade do inimigo (zumbi)
 
     [Header("Enemy Components")]
     Rigidbody2D rb; // rigidbody do inimigo
     public Transform target; // alvo do inimigo
     Vector2 moveDirection;
+
+    bool isDead = false;
 
     void Awake()
     {
@@ -42,9 +46,13 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (isDead) return;
+
         health -= damage;
         if (health <= 0)
         {
+            isDead = true;
+            OnEnemyKilled?.Invoke();
             Destroy(gameObject); //mata o zombie
         }
     }
