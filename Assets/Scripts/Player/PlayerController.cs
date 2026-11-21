@@ -9,11 +9,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Vector Control")]
     Vector2 lastMoveDirection;
-    Vector2 movementDirection;
     Vector2 input;
 
     [Header("Player Control")]
-    public float speed = 1.0f; // the movement speed of the player
+    public float speed = 1.0f;
 
     void Start()
     {
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //HandleMovement();
         ProccessInputs();
         Animate();
     }
@@ -60,32 +58,4 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("LastMoveX", lastMoveDirection.x);
         anim.SetFloat("LastMoveY", lastMoveDirection.y);
     }
-
-    /*void HandleMovement()
-    {
-        float horizontal = 0f;
-        float vertical = 0f;
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            vertical = 1f;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            vertical = -1f;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            horizontal = 1f;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            horizontal = -1f;
-        }
-
-        movementDirection = new Vector2(horizontal, vertical).normalized;
-    } */
 }
