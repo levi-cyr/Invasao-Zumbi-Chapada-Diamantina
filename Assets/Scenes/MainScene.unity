@@ -58191,7 +58191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6264678257620766451, guid: 3a01e91556925d24aaa932e7b9eddf35, type: 3}
+  m_Sprite: {fileID: 9165928315756091881, guid: e5f7efd6dfd9e2f429b6db7fb499feb9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -130087,7 +130087,7 @@ GameObject:
   - component: {fileID: 1152096807}
   m_Layer: 0
   m_Name: Helicoptero
-  m_TagString: Untagged
+  m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
