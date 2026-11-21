@@ -3,7 +3,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Enemy Settings")]
-    [SerializeField] float health, maxHealth = 3f;
+    [SerializeField] float health = 3f;
+    //[SerializeField] float maxHealth = 3f;
 
     public float speed = 0.4f; // velocidade do inimigo (zumbi)
 
@@ -44,7 +45,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            
+            Destroy(gameObject); //mata o zombie
         }
     }
 }
