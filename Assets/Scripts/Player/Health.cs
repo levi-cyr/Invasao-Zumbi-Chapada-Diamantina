@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     [Header("INVENCIVEL")]
     public float invulnerabilityDuration = 1.0f;
-    public bool isInvulnerable = false;
+    bool isInvulnerable = false;
 
     [Header("Componentes")]
     SpriteRenderer spriteRenderer;
