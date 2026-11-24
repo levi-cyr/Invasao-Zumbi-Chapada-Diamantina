@@ -23235,6 +23235,7 @@ MonoBehaviour:
   aim: {fileID: 476229255}
   bullet: {fileID: 9088539613176030261, guid: 67b43b0b24e37c15596a737ed112a250, type: 3}
   fireForce: 10
+  shootCooldown: 0.6
 --- !u!114 &672452764
 MonoBehaviour:
   m_ObjectHideFlags: 0

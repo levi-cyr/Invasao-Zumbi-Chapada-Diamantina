@@ -9,7 +9,7 @@ public class Shoot : MonoBehaviour
 
     [Header("Shoot Settings")]
     public float fireForce = 10f;
-    float shootCooldown = 0.25f;
+    public float shootCooldown = 0.6f;
     float shootTimer = 0.5f;
 
     private void Start()
@@ -34,7 +34,7 @@ public class Shoot : MonoBehaviour
             shootTimer = 0;
             GameObject intBullet = Instantiate(bullet, aim.position, aim.rotation);
             intBullet.GetComponent<Rigidbody2D>().AddForce(-aim.up * fireForce, ForceMode2D.Impulse);
-            Destroy(intBullet, 2f);
+            Destroy(intBullet, 1f);
         }
     }
 }
