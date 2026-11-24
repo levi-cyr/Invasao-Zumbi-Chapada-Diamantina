@@ -1,5 +1,5 @@
 # Invasão Zumbi na Chapada Diamantina
-![Invasão Zumbi na Chapada Diamantina](zumbi-rural-3.png)
+![Invasão Zumbi na Chapada Diamantina](Thumbnail.png)
 ![Unity](https://img.shields.io/badge/Unity-6000.0.84f1-black?style=flat&logo=unity)
 ![Platform](https://img.shields.io/badge/Platform-Unity%20Play-blue?style=flat)
 
